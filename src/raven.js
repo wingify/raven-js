@@ -585,7 +585,8 @@ function processException(type, message, fileurl, lineno, frames, options) {
     }
 
     // Truncate the message to a max of characters
-    message = truncate(message, 100);
+    // Remove this temporarily as angular has debugging info in message.
+    //message = truncate(message, 100);
 
     if (globalOptions.ignoreUrls && globalOptions.ignoreUrls.test(fileurl)) return;
     if (globalOptions.whitelistUrls && !globalOptions.whitelistUrls.test(fileurl)) return;
